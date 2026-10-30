@@ -1,103 +1,79 @@
-# Week 01 – Lab Environment Setup
+# Week 01 – VirtualBox and Kali Linux Lab Setup
 
-## 1. Overview
+## 1. Introduction
 
-This week focuses on preparing a virtual cybersecurity lab environment using Oracle VM VirtualBox and Kali Linux.
+During Week 01 of my cybersecurity internship, I worked on preparing a virtual cybersecurity lab environment using Oracle VM VirtualBox and Kali Linux.
 
-The objective is to create a controlled environment for learning and performing authorized cybersecurity practical exercises.
+The purpose of this lab is to establish a controlled environment for learning Linux, networking, and cybersecurity tools.
 
 ## 2. Objectives
 
-- Prepare the virtual lab environment.
-- Configure the VirtualBox NAT Network.
-- Configure the Kali Linux network connection.
-- Verify network connectivity.
-- Take a snapshot of the virtual machine after setup.
+- Prepare the existing VirtualBox environment.
+- Configure a NAT Network in VirtualBox.
+- Connect the Kali Linux virtual machine to the NAT Network.
+- Configure and verify Kali Linux network settings.
+- Test network connectivity.
+- Configure shared folders and VirtualBox integration features.
+- Create a virtual machine snapshot after successful setup.
 
 ## 3. Lab Environment
 
 | Component | Configuration |
 |---|---|
-| Host Operating System | Windows 11 |
+| Host OS | Windows 11 |
 | Virtualization Software | Oracle VM VirtualBox 7.x |
-| Guest Operating System | Kali Linux 2026.1 |
+| Guest OS | Kali Linux 2026.1 |
 | Network Mode | NAT Network |
 | NAT Network Name | NatNetwork |
-| Network Subnet | 10.0.0.0/24 |
+| IPv4 Prefix | 10.0.0.0/24 |
 | DHCP | Enabled |
+| IPv6 | Disabled |
 
-*Note: Record the final Kali IP address, gateway, and DNS only after verifying them in Kali Linux.*
+*Note: The final Kali IP address, gateway, and DNS will be documented after verification.*
 
-## 4. Lab Tasks
+## 4. Lab Activities
 
-### Task 1 – VirtualBox Preparation
-- Checked the existing VirtualBox installation.
-- Prepared the existing Kali Linux virtual machine.
+### Task 1 – VirtualBox Configuration
+Prepared the existing VirtualBox installation and Kali Linux virtual machine.
 
 ### Task 2 – NAT Network Configuration
-- Created a NAT Network named `NatNetwork`.
-- Configured the IPv4 prefix as `10.0.0.0/24`.
-- Enabled DHCP.
-- Disabled IPv6.
+Created a NAT Network named `NatNetwork` with the IPv4 prefix `10.0.0.0/24`. DHCP was enabled and IPv6 was disabled.
 
 ### Task 3 – Kali Linux Network Configuration
-- Connected the Kali Linux virtual machine to `NatNetwork`.
-- Checked the virtual network adapter settings.
-- Pending: verify the final network configuration and resolve any VirtualBox configuration warnings.
+Configured the Kali Linux virtual machine to use the `NatNetwork` adapter. Further verification of the adapter settings and network connection is required.
 
-### Task 4 – Network Connectivity Verification
-Commands to use:
+### Task 4 – Network Connectivity Testing
+Planned to use Linux networking commands to check the IP address, default route, DNS resolution, and connectivity.
 
-```bash
-ip addr
-ip route
-nmcli
-ping -c 4 10.0.0.1
-ping -c 4 8.8.8.8
-nslookup google.com
-```
-
-*Record the actual output and results after running these commands.*
-
-### Task 5 – Shared Folder and Integration
-- Pending: configure the Windows shared folder.
-- Pending: verify clipboard and drag-and-drop integration, if supported.
-- Pending: verify Guest Additions if required.
+### Task 5 – Shared Folder Configuration
+Planned to configure a shared folder between the Windows host and Kali Linux guest.
 
 ### Task 6 – Virtual Machine Snapshot
-- Pending: take a snapshot after completing and verifying the lab configuration.
+A snapshot will be created after the lab environment is fully configured and verified.
 
-## 5. Screenshots
+## 5. Repository Contents
 
-Add screenshots as evidence of your work:
+- `Lab-Setup/` – Configuration documentation.
+- `Screenshots/` – Evidence of the lab setup and verification.
+- `Notes/` – Commands, troubleshooting steps, and learning notes.
 
-- VirtualBox NAT Network configuration.
-- Kali Linux network adapter settings.
-- Kali Linux IP configuration.
-- Network connectivity test results.
-- Shared folder configuration.
-- Virtual machine snapshot.
+## 6. Learning Outcomes
 
-## 6. Issues and Troubleshooting
+Through this lab, I aim to understand:
 
-Document any errors encountered during setup and the steps taken to resolve them.
-
-## 7. Learning Outcomes
-
-By completing this lab, I aim to understand:
-
-- Virtual machine configuration using VirtualBox.
+- Virtualization and virtual machine configuration.
 - NAT Network configuration.
-- Basic Kali Linux network management.
-- Network connectivity verification.
-- The importance of snapshots and a controlled lab environment.
+- Kali Linux network management.
+- Basic network troubleshooting.
+- Connectivity and DNS verification.
+- The importance of virtual machine snapshots.
 
-## 8. Status
+## 7. Current Status
 
-**In Progress**
+**Status: In Progress**
 
-Tasks will be marked complete only after configuration and verification.
+The NAT Network has been created. Remaining configuration and verification tasks will be updated as they are completed.
 
-## 9. Safety and Ethics
+## 8. Safety and Ethics
 
-All cybersecurity activities in this internship lab will be performed only in authorized environments and for educational purposes.
+All cybersecurity activities will be performed only in authorized lab environments and for educational purposes.
