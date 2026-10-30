@@ -1,1 +1,45 @@
 
+# VirtualBox virtual machines
+*.vdi
+*.vbox
+*.vbox-prev
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.sav
+
+# VM snapshots and ISO files
+Snapshots/
+*.iso
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+credentials.txt
+passwords.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Operating system
+Thumbs.db
+.DS_Store
+
