@@ -15,7 +15,7 @@ The activities covered:
 | Activity | Description | Status |
 |---|---|---|
 | PM1 | Domain footprinting and reconnaissance using Kali Linux tools | Completed |
-| PM5 | Network discovery and scanning using Nmap and Zenmap | In Progress – final Zenmap evidence pending |
+| PM5 | Network discovery and scanning using Nmap and Zenmap | Completed |
 
 ## PM1 – Footprinting and Reconnaissance
 
