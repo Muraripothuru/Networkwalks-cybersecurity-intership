@@ -45,10 +45,9 @@ Do not report ports or services as open unless the scan confirms them.
 
 ## Screenshots
 
-- 01-virtualbox-network.png
-- 02-kali-host-discovery.png
-- 03-zenmap-scan.png
-- 04-zenmap-ports-hosts.png
+- 01-zenmap-scan.png
+- 02-zenmap-ports-hosts.png
+- 03-zenmap-topology.png
 
 ## Ethical Considerations
 
