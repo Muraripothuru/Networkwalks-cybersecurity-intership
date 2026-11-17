@@ -53,8 +53,8 @@ security assessment.
 
 | Week | Topic | Status |
 |---|---|---|
-| Week 01 | VirtualBox and Kali Linux Lab Setup | In Progress |
-| Week 02 | To be updated | Pending |
+| Week 01 | VirtualBox and Kali Linux Lab Setup | Completed |
+| Week 02 |  Footprinting, Reconnaissance and Network Scanning | Completed |
 | Week 03 | To be updated | Pending |
 | Week 04 | To be updated | Pending |
 
