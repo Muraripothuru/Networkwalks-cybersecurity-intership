@@ -1,59 +1,65 @@
+# Zenmap Network Scanning – Findings
 
-# PM5 – Network Scanning Findings
+## 1. Objective
 
-## 1. VirtualBox Network Setup
+The objective of this activity was to perform network scanning using Zenmap, the graphical interface for Nmap, to identify active hosts and discover open TCP ports on the authorized target.
 
-A Host-only Adapter was configured as the second network interface for Kali Linux.
+## 2. Target Information
 
-Kali Linux:
+- **Target Domain:** networkwalks.com
+- **Resolved IP Address:** 192.232.216.135
+- **Tool Used:** Zenmap / Nmap
+- **Nmap Version:** 7.991
+- **Scan Type:** SYN Stealth Scan
+- **Ports Scanned:** Default 1,000 TCP ports
 
-- eth0: `10.0.2.15/24`
-- eth1: `192.168.56.101/24`
+## 3. Scan Results
 
-Windows host-only adapter:
+The scan successfully resolved the target domain to IP address `192.232.216.135` and identified the host during the ping scan.
 
-- IPv4: `192.168.56.1`
-- Subnet mask: `255.255.255.0`
+The following open TCP ports were discovered:
 
-## 2. Host Discovery
+| Port | Protocol | Common Service |
+|---|---|---|
+| 21 | TCP | FTP |
+| 22 | TCP | SSH |
+| 53 | TCP | DNS |
+| 80 | TCP | HTTP |
+| 110 | TCP | POP3 |
+| 143 | TCP | IMAP |
+| 443 | TCP | HTTPS |
+| 587 | TCP | SMTP Submission |
+| 993 | TCP | IMAPS |
+| 995 | TCP | POP3S |
+| 2222 | TCP | Alternative SSH |
 
-**Command:**
+**Total open ports reported: 11**
 
-`sudo nmap -4 -sn -n -e eth1 192.168.56.1`
+Note: The service names above are commonly associated with these port numbers. The supplied scan output does not include service-version detection, so the actual services running on these ports have not been independently confirmed.
 
-**Actual result:**
+## 4. Observations
 
-- Target: `192.168.56.1`
-- Host status: Up
-- Latency: Approximately `0.00050s`
-- MAC address: `0A:00:27:00:00:03`
-- Scan type: Host discovery
-- Network interface: `eth1`
+The scan identified several ports commonly associated with web hosting, remote administration, DNS, and email services.
 
-The scan successfully identified the Windows host-only adapter.
+- Ports 80 and 443 are commonly used for HTTP and HTTPS web traffic.
+- Ports 21 and 22 are commonly associated with FTP and SSH access.
+- Port 53 is commonly associated with DNS services.
+- Ports 110, 143, 993, and 995 are commonly associated with email retrieval.
+- Port 587 is commonly used for email submission.
+- Port 2222 may provide an alternative remote-access service.
 
-## 3. Connectivity Observation
+The scan also reported dropped probes, increased transmission delays, and retransmission-limit warnings. These messages indicate that some scan probes did not receive timely responses, which may affect scan completeness.
 
-An ICMP ping test did not receive replies. However, Nmap host discovery successfully identified the host as active.
+## 5. Troubleshooting and Limitations
 
-This demonstrates that a failed ping does not necessarily mean a system is offline.
+During the scan, Nmap displayed multiple timing-related warnings, including dropped probes and retransmission-limit messages. The scan adjusted its sending delay automatically to handle these conditions.
 
-## 4. Zenmap Port Scan
+Although 11 open ports were identified, the output does not establish the exact software versions or confirm the services operating on each port. Further authorized service detection would be required for that level of detail.
 
-**Status: Complete this section after the actual Zenmap scan.**
+## 6. Conclusion
 
-- Zenmap profile: [Enter actual profile]
-- Scan command: [Enter actual command]
-- Open ports: [Enter actual results]
-- Closed ports: [Enter actual results]
-- Filtered ports: [Enter actual results]
-- Services identified: [Enter actual results]
+The Zenmap scanning activity demonstrated how Nmap can be used to identify a target host and discover open TCP ports. The scan identified 11 open ports on the resolved IP address `192.232.216.135`.
 
-Attach the actual Zenmap screenshots.
+This activity provided practical experience in network reconnaissance, port discovery, interpreting scan output, and understanding the importance of scan limitations when evaluating results.
 
-## 5. Conclusion
-
-The isolated VirtualBox network was configured successfully, and Nmap host discovery identified the Windows host-only adapter.
-
-The final port-scanning findings must be added after completing the Zenmap scan.
-
+All findings should be considered preliminary and interpreted within the scope of the authorized assessment.
